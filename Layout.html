@@ -11,7 +11,7 @@
   <title>Checkout example for Bootstrap</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../../../..//bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../../bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="form-validation.css" rel="stylesheet">
@@ -22,13 +22,12 @@
     <div class="py-3 text-center col-md-8">
       <img class="d-block mx-auto mb-4" src="https://www.watercorporation.com.au/img/watercorporation_logo_200px.png" alt="" width="120"
         height="72">
-      <h3>AutoSave Change Request Form</h3> 
+      <h3>AutoSave Change Request Form</h3>
       <p class="lead">Use this request form to create, modify or delete devices in MDT AutoSave software.</p>
     </div>
 
     <div class="row">
-      <div class="col-md-8 order-md-1">
-        <!-- <h4 class="mb-3">Billing address</h4> -->
+      <div class="col-md-8 order-md-1">    
         <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -66,8 +65,7 @@
             <label for="username">*Requested by</label>
             <div class="input-group">
               <input type="text" class="form-control" id="username" placeholder="Active Directory User Name" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                Your username is required.
+              <div class="invalid-feedback" style="width: 100%;"> Your username is required.
               </div>
             </div>
           </div>
@@ -76,8 +74,7 @@
             <label for="scope">*Scope of Work</label>
             <div class="input-group">
               <input type="text" class="form-control" id="scope" placeholder="Brief description of work" required>
-              <div class="invalid-feedback" style="width: 100%;">
-                information is required.
+              <div class="invalid-feedback" style="width: 100%;"> information is required.
               </div>
             </div>
           </div>
@@ -94,7 +91,7 @@
 
             <div class="col-md-6 mb-3">
               <label for="phone">Phone
-                  <span class="text-muted">(Optional)</span>
+                <span class="text-muted">(Optional)</span>
               </label>
               <input type="text" class="form-control" id="phone" placeholder="">
               <div class="invalid-feedback">
@@ -102,101 +99,112 @@
               </div>
             </div>
           </div>
-          
-          <p class="lead">For devices with function location numbers allocated in SAP, provide the following device information in the below tables.</p>
 
-          <div class="row">
-            <div class="col-md-5 mb-3">
-              <label for="country">Country</label>
-              <select class="custom-select d-block w-100" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
+          <div class="container">
+            <p class="lead">For devices with function location numbers allocated in SAP, provide the following information and click on Add
+              device button.</p>
+            <div class="col-md-3 order-md-2 mb-3">
+              <input type="button" class="btn btn-primary" value="Add device">
             </div>
-            <div class="col-md-4 mb-3">
-              <label for="state">State</label>
-              <select class="custom-select d-block w-100" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="zip">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
-          <!-- <hr class="mb-4">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="same-address">
-            <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="save-info">
-            <label class="custom-control-label" for="save-info">Save this information for next time</label>
-          </div>
-          <hr class="mb-4">
-
-          <h4 class="mb-3">Payment</h4>
-
-          <!-- <div class="d-block my-3">
-            <div class="custom-control custom-radio">
-              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-              <label class="custom-control-label" for="credit">Credit card</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="debit">Debit card</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="paypal">Paypal</label>
-            </div>
-          </div> -->
-          <!-- <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="cc-name">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-muted">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="cc-number">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>  
           </div>
           <div class="row">
-            <div class="col-md-3 mb-3">
-              <label for="cc-expiration">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+
+            <div class="col-md-6 mb-3">
+              <select class="custom-select d-block w-100" id="devicefl" required>
+                <option value="">*Choice List.</option>
+                <option>Add device</option>
+                <option>Modify device</option>
+                <option>Remove device</option>
+              </select>
               <div class="invalid-feedback">
-                Expiration date required
+                Please select a valid input.
               </div>
             </div>
-            <div class="col-md-3 mb-3">
-              <label for="cc-expiration">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+            <div class="col-md-6 mb-3">   
+              <input type="text" class="form-control" id="type" placeholder="*Device Function Location Number" required>
               <div class="invalid-feedback">
-                Security code required
+                Please provide a valid number.
               </div>
             </div>
-          </div> --> 
+            <div class="col-md-6 mb-3">             
+              <input type="text" class="form-control" id="type" placeholder="*Device Type" required>
+              <div class="invalid-feedback">
+                Please provide a valid device.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">             
+              <input type="text" class="form-control" id="zip" placeholder="*Model" required>
+              <div class="invalid-feedback">
+                Model name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">              
+              <input type="text" class="form-control" id="zip" placeholder="Manufacturer/Description" required>
+              <div class="invalid-feedback">
+                Description is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <p class="lead">For devices with function location numbers not allocated in SAP, provide the following information and click
+              on Add device button. </p>
+            <div class="col-md-3 order-md-2 mb-3">
+              <input type="button" class="btn btn-primary" value="Add device">
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <select class="custom-select d-block w-100" id="devicefl" required>
+                <option value="">*Choice List.</option>
+                <option>Add device</option>
+                <option>Modify device</option>
+                <option>Remove device</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid input.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" id="type" placeholder="*Location Area/Switchboard Number" required>
+              <div class="invalid-feedback">
+                Please provide a valid area or number.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" id="type" placeholder="*Install/Uninstall Date" required>
+              <div class="invalid-feedback">
+                Please provide a valid device.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" id="zip" placeholder="*Model" required>
+              <div class="invalid-feedback">
+                Model name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" id="zip" placeholder="Description" required>
+              <div class="invalid-feedback">
+                Description is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" id="zip" placeholder="*Serial Number" required>
+              <div class="invalid-feedback">
+                Description is required.
+              </div>
+            </div>
+          </div>
+
+
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-        </form>
+          <span>
+              <button class="btn btn-primary btn-lg btn-block col-md-3 d-inline-block" type="submit">Submit</button>
+              <button class = "position-absolute d-inline-block"onclick="testFunction()">Attachment</button>
+          </span>
+
       </div>
     </div>
 
@@ -225,6 +233,13 @@
   <script src="../../../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
   <script src="../../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
   <script src="../../../../bootstrap-4.0.0/assets/js/vendor/holder.min.js"></script>
+  <script>
+          function testFunction() {
+          var x = document.createElement("INPUT");
+          x.setAttribute("type", "file");
+          x.disabled = true;
+        }
+  </script>
   <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
