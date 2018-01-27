@@ -7,6 +7,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="../../../../bootstrap-4.0.0/favicon.ico">
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
+  <script defer src="fontawesome-all.js"></script>
 
   <title>Checkout example for Bootstrap</title>
 
@@ -20,14 +22,14 @@
 <body class="bg-light">
   <div class="container">
     <div class="py-3 text-center col-md-8">
-      <img class="d-block mx-auto mb-4" src="https://www.watercorporation.com.au/img/watercorporation_logo_200px.png" alt="" width="120"
+      <img class="d-block mx-auto mb-4" src="https://www.watercorporation.com.au/img/watercorporation_logo_200px.png" alt="" width="150"
         height="72">
       <h3>AutoSave Change Request Form</h3>
       <p class="lead">Use this request form to create, modify or delete devices in MDT AutoSave software.</p>
     </div>
 
     <div class="row">
-      <div class="col-md-8 order-md-1">    
+      <div class="col-md-8 order-md-1">     
         <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -81,7 +83,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="email">Email
-                <span class="text-muted">(Optional)</span>
+                <!-- <span class="text-muted">(Optional)</span> -->
               </label>
               <input type="email" class="form-control" id="email" placeholder="you@example.com">
               <div class="invalid-feedback">
@@ -91,7 +93,7 @@
 
             <div class="col-md-6 mb-3">
               <label for="phone">Phone
-                <span class="text-muted">(Optional)</span>
+                <!-- <span class="text-muted">(Optional)</span> -->
               </label>
               <input type="text" class="form-control" id="phone" placeholder="">
               <div class="invalid-feedback">
@@ -100,15 +102,16 @@
             </div>
           </div>
 
-          <div class="container">
-            <p class="lead">For devices with function location numbers allocated in SAP, provide the following information and click on Add
-              device button.</p>
-            <div class="col-md-3 order-md-2 mb-3">
-              <input type="button" class="btn btn-primary" value="Add device">
+          <div class="row">
+              <div class="col-md-12 order-md-1"> 
+              <p class="deviceadd">
+                Please provide the following information for each device.
+                <input type="button" class="btn btn-primary" value="Add device">                
+              </p>     
+
             </div>
           </div>
           <div class="row">
-
             <div class="col-md-6 mb-3">
               <select class="custom-select d-block w-100" id="devicefl" required>
                 <option value="">*Choice List.</option>
@@ -121,7 +124,7 @@
               </div>
             </div>
             <div class="col-md-6 mb-3">   
-              <input type="text" class="form-control" id="type" placeholder="*Device Function Location Number" required>
+              <input type="text" class="form-control" id="type" placeholder="Device Function Location Number" required>
               <div class="invalid-feedback">
                 Please provide a valid number.
               </div>
@@ -139,89 +142,49 @@
               </div>
             </div>
             <div class="col-md-6 mb-3">              
-              <input type="text" class="form-control" id="zip" placeholder="Manufacturer/Description" required>
+              <input type="text" class="form-control" id="zip" placeholder="Manufacturer" required>
               <div class="invalid-feedback">
-                Description is required.
+                Description is required.  
               </div>
             </div>
+            <div class="col-md-6 mb-3">              
+                <input type="text" class="form-control" id="zip" placeholder="Description" required>
+                <div class="invalid-feedback">
+                  Description is required.  
+                </div>
+              </div>
           </div>
 
-          <div class="container">
-            <p class="lead">For devices with function location numbers not allocated in SAP, provide the following information and click
-              on Add device button. </p>
-            <div class="col-md-3 order-md-2 mb-3">
-              <input type="button" class="btn btn-primary" value="Add device">
-            </div>
-          </div>
+          <hr class="mb-4"> 
           <div class="row">
-
-            <div class="col-md-6 mb-3">
-              <select class="custom-select d-block w-100" id="devicefl" required>
-                <option value="">*Choice List.</option>
-                <option>Add device</option>
-                <option>Modify device</option>
-                <option>Remove device</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid input.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="type" placeholder="*Location Area/Switchboard Number" required>
-              <div class="invalid-feedback">
-                Please provide a valid area or number.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="type" placeholder="*Install/Uninstall Date" required>
-              <div class="invalid-feedback">
-                Please provide a valid device.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="zip" placeholder="*Model" required>
-              <div class="invalid-feedback">
-                Model name is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="zip" placeholder="Description" required>
-              <div class="invalid-feedback">
-                Description is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" id="zip" placeholder="*Serial Number" required>
-              <div class="invalid-feedback">
-                Description is required.
-              </div>
+            <div class = "col-md-12 mb-3">
+              <button class="btn btn-primary d-inline-block submit" type="submit">Submit</button>
+                <a href="#" class="btn btn-info attach" onclick="testFunction()">
+                  <i class="fa fa-paperclip" aria-hidden="true"></i>Add attachments 
+                </a>                
             </div>
           </div>
-
-
-          <hr class="mb-4">
-          <span>
-              <button class="btn btn-primary btn-lg btn-block col-md-3 d-inline-block" type="submit">Submit</button>
-              <button class = "position-absolute d-inline-block"onclick="testFunction()">Attachment</button>
-          </span>
-
+           </div>
+          </div>
       </div>
     </div>
 
-    <footer class="my-1 pt-3 text-muted text-center text-small col-md-8">
-      <p class="mb-1">&copy; 2017-2018 Water Corporation</p>
-      <ul class="list-inline">
+    <div class ="row">
+    <footer class="my-1 pt-3 text-muted text-center text-small col-md-8 footer">
+      <p class="mb-1">&copy; 2018 Water Corporation</p>
+      <!-- <ul class="list-inline">
         <li class="list-inline-item">
           <a href="#">Privacy</a>
         </li>
         <li class="list-inline-item">
           <a href="#">Terms</a>
-        </li>
+        </li> 
         <li class="list-inline-item">
           <a href="#">Support</a>
         </li>
-      </ul>
+      </ul> -->
     </footer>
+  </div>
   </div>
 
   <!-- Bootstrap core JavaScript
@@ -233,15 +196,18 @@
   <script src="../../../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
   <script src="../../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
   <script src="../../../../bootstrap-4.0.0/assets/js/vendor/holder.min.js"></script>
+  
+  <!-- Example starter JavaScript for attachments -->
   <script>
           function testFunction() {
-          var x = document.createElement("INPUT");
+          var x = document.createElement("input");
           x.setAttribute("type", "file");
           x.disabled = true;
         }
   </script>
+
+<!-- Example starter JavaScript for disabling form submissions if there are invalid fields -->
   <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
         'use strict';
 
