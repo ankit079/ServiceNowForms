@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../../../bootstrap-4.0.0/favicon.ico">
+  <link rel="icon" href="../../../bootstrap-4.0.0/favicon.ico">
   <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
   <script defer src="fontawesome-all.js"></script>
 
   <title>Checkout example for Bootstrap</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../../../../bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="form-validation.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
 <body class="bg-light">
   <div class="container">
-<div class="py-3 text-center col-md-8">
+    <div class="py-3 text-center col-md-8">
   <img class="d-block mx-auto mb-4" src="https://www.watercorporation.com.au/img/watercorporation_logo_200px.png" alt="" width="150"
     height="72">
   <h3>AutoSave Change Request Form</h3>
@@ -36,7 +36,7 @@
   </div>
     </div>
 
-    <div class="row">
+    <div class="row"  id ="toggle">
       <div class="col-md-8 order-md-1">
         <form class="needs-validation" novalidate>
           <div class="row">
@@ -133,8 +133,14 @@
     </div>
   </div>
 
-    <div class="col-md-6 mb-3">
-    <input type="text" class="hiddenField" id="myTextBox" />
+  <div class="col-md-6 mb-3"id="otherTextBox">
+    <input type="text" class="form-control" id="type" placeholder="Other Device Type" required>
+    <div class="invalid-feedback">
+      Please provide a valid devicetype.
+    </div>
+  </div>
+
+    <div class="col-md-6 mb-3" id = "selection">    
     <select class="custom-select d-block w-100" id="devicetype" required>
                 <option value="">*Device Type</option>
                 <option>RTU</option>
@@ -237,49 +243,64 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../../../bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
-<script src="../../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
-<script src="../../../../bootstrap-4.0.0/assets/js/vendor/holder.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+<script src="../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+<script src="../../../bootstrap-4.0.0/assets/js/vendor/holder.min.js"></script>
+<script src="autosave.js"></script>
 
-<!-- Example starter JavaScript for attachments -->
-<script>
-          function testFunction() {
-            var x = document.createElement("input");
-            x.setAttribute("type", "file");
-            x.disabled = true;
+<script>    
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+  (function () {
+    'use strict';
+
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
           }
-$(document).ready(function(){
-    $('#devicetype').change(function(){
-       $(this).val() == "OTHER" ? $('#myTextBox').show() : $('#myTextBox').hide(); 
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+
+  // This toggles the page input as per the radio button selection
+  
+    $(document).ready(function selectOptionFunction(){
+    $("#inlineRadio2").click(function(){
+        $("#toggle").hide();
+    });
+    $("#inlineRadio1").click(function(){
+        $("#toggle").show();
     });
 });
 
-  </script>
+function testFunction() {
+    var x = document.createElement("input");
+    x.setAttribute("type", "file");
+    x.disabled = true;
+  }
 
-<!-- Example starter JavaScript for disabling form submissions if there are invalid fields -->
-<script>
-          (function () {
-            'use strict';
+  //Toggles the value of selection when the deviceType is selected as "OTHER" with a new tex box for input
 
-            window.addEventListener('load', function () {
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              var forms = document.getElementsByClassName('needs-validation');
-
-              // Loop over them and prevent submission
-              var validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add('was-validated');
-                }, false);
-              });
-            }, false);
-          })();
-  </script>
-
+$(document).ready(function(){
+  $('#otherTextBox').hide()
+$('#devicetype').change(function(){
+$(this).val() == "OTHER" ? $('#otherTextBox').show() : $('#otherTextBox').hide(); 
+$(this).val() == "OTHER" ? $('#selection').hide() : $('#selection').show();
+});
+});
+  
+</script>
 </body>
 
 </html>
