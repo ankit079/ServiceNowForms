@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../bootstrap-4.0.0/favicon.ico">
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script> -->
+  <script defer src="fontawesome-all.js"></script>
+
+  <title>Checkout example for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../../../bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <div class="container">
+<div class="py-3 text-center col-md-8">
+  <img class="d-block mx-auto mb-4" src="https://www.watercorporation.com.au/img/watercorporation_logo_200px.png" alt="" width="150"
+    height="72">
+  <h3>AutoSave Change Request Form</h3>
+  <p class="lead">Use this request form to create, modify or remove devices in MDT AutoSave software.</p>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">For projects (A,B,C,D)</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">Other</label>
+  </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="region">Region/Location (Town)</label>
+              <input type="text" class="form-control" id="region" placeholder="" value="">
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="sitename">Site Name</label>
+              <input type="text" class="form-control" id="sitename" placeholder="" value="">
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3 ">
+              <label for="project">*Project/Work Order Number</label>
+              <input type="text" class="form-control" id="project" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="sitefl">*Site Functional Location</label>
+              <input type="text" class="form-control" id="sitefl" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="username">*Requested by</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="username" placeholder="Active Directory User Name" required>
+              <div class="invalid-feedback" style="width: 100%;"> Your username is required.
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <label for="email">Alternative Email
+                <!-- <span class="text-muted">(Optional)</span> -->
+              </label>
+    <input type="email" class="form-control" id="email" placeholder="you@companyname.com.au">
+    <div class="invalid-feedback">
+      Please enter a valid email address.
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label for="phone">Phone
+                <!-- <span class="text-muted">(Optional)</span> -->
+              </label>
+    <input type="text" class="form-control" id="phone" placeholder="">
+    <div class="invalid-feedback">
+      Please enter your phone number.
+    </div>
+  </div>
+
+</div class="row">
+<div class="mb-3">
+  <label for="scope">File Path</label>
+  <div class="input-group">
+    <input type="text" class="form-control" id="scope" placeholder="AutoSave File Path">
+    <div class="invalid-feedback" style="width: 100%;"> information is required.
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 order-md-1">
+    <p class="deviceadd">
+      Please provide the following information for each device.
+      <input type="button" class="btn btn-primary" value="Add device">
+    </p>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <select class="custom-select d-block w-100" id="devicefl" required>
+                <option value="">*Choice List</option>
+                <option>Create device</option>
+                <option>Modify device</option>
+                <option>Remove device</option>
+              </select>
+    <div class="invalid-feedback">
+      Please select a valid input.
+    </div>
+  </div>
+
+    <div class="col-md-6 mb-3">
+    <input type="text" class="hiddenField" id="myTextBox" />
+    <select class="custom-select d-block w-100" id="devicetype" required>
+                <option value="">*Device Type</option>
+                <option>RTU</option>
+                <option>DATALOGGER</option>
+                <option>PLC</option>
+                <option>ROUTER</option>
+                <option>MODEM</option>
+                <option>SWITCH</option>
+                <option>OIP</option>
+                <option>VSD</option>
+                <option>FLOW</option>
+                <option>LEVEL</option>
+                <option>OTHER</option>             
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid input.
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="type" placeholder="SAP Device Functional Location" required>
+    <div class="invalid-feedback">
+      Please provide a valid number.
+    </div>
+  </div>
+  <!--<div class="col-md-6 mb-3">             
+              <input type="text" class="form-control" id="type" placeholder="*Device Type" required>
+              <div class="invalid-feedback">
+                Please provide a valid device.
+              </div>
+            </div>-->
+    <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="text" placeholder="SAP Device Description" required>
+    <div class="invalid-feedback">
+      Description is required.
+    </div>
+  </div>
+  
+  <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="text" placeholder="*Model" required>
+    <div class="invalid-feedback">
+      Model name is required.
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="text" placeholder="Manufacturer" required>
+    <div class="invalid-feedback">
+      Description is required.
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="text" placeholder="Device Function" required>
+    <div class="invalid-feedback">
+      Description is required.
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <input type="text" class="form-control" id="text" placeholder="Configuration Software" required>
+    <div class="invalid-feedback">
+      Description is required.
+    </div>
+  </div>
+</div>
+
+<hr class="mb-4">
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <button class="btn btn-primary d-inline-block submit" type="submit">Submit</button>
+    <a href="#" class="btn btn-info attach" onclick="testFunction()">
+<i class="fa fa-paperclip" aria-hidden="true"></i>Add attachments
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <footer class="my-1 pt-3 text-muted text-center text-small col-md-8 footer">
+    <p class="mb-1">&copy; 2018 Water Corporation</p>
+    <!-- <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li> 
+        <li class="list-inline-item">
+          <a href="#">Support</a>
+        </li>
+      </ul> -->
+  </footer>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+<script src="../../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+<script src="../../../../bootstrap-4.0.0/assets/js/vendor/holder.min.js"></script>
+
+<!-- Example starter JavaScript for attachments -->
+<script>
+          function testFunction() {
+            var x = document.createElement("input");
+            x.setAttribute("type", "file");
+            x.disabled = true;
+          }
+$(document).ready(function(){
+    $('#devicetype').change(function(){
+       $(this).val() == "OTHER" ? $('#myTextBox').show() : $('#myTextBox').hide(); 
+    });
+});
+
+  </script>
+
+<!-- Example starter JavaScript for disabling form submissions if there are invalid fields -->
+<script>
+          (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.getElementsByClassName('needs-validation');
+
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+                }, false);
+              });
+            }, false);
+          })();
+  </script>
+
+</body>
+
+</html>
